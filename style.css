@@ -26,7 +26,7 @@ body.dark-mode {
 header {
   background: var(--primary);
   color: white;
-  padding:25px 0;
+  padding: 25px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -38,19 +38,28 @@ header {
   margin: 0 auto;
 }
 
+/* Hide logo */
+.logo {
+  display: none;
+}
+
+/* Adjust header-content alignment without logo */
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* center nav links horizontally */
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 10px;
+  flex-direction: row;
+  gap: 15px;
   margin: 0;
   padding: 0;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -201,20 +210,23 @@ body.dark-mode nav a.active {
   }
 
   nav ul {
-    flex-direction: column;
+    flex-direction: row;  /* Keep nav horizontal */
+    flex-wrap: wrap;      /* Allow wrapping */
+    justify-content: center;
     gap: 10px;
-    align-items: center;
     width: 100%;
   }
 
   nav li {
-    width: 100%;
+    width: auto;
     text-align: center;
   }
 
   nav a {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: auto;
+    font-size: 14px;
+    padding: 6px 10px;
   }
 }
 
@@ -252,12 +264,4 @@ body.dark-mode nav a.active {
 body, html {
   margin: 0;
   padding: 0;
-}
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: row;  /* Stay horizontal */
-    flex-wrap: wrap;      /* Allow wrapping if needed */
-    justify-content: center; /* Center the links */
-    gap: 10px;
-  }
 }
