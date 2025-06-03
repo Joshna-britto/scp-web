@@ -1,11 +1,10 @@
 /* Fonts and Base Styling */
 :root {
-  
-   --light-bg: #ddc4e9;
+  --light-bg: #ddc4e9;
   --light-text: #1b2850;
   --dark-text: #a339a3;
-  --primary:#69939c;
-  --accent: #3aafa9;
+  --primary: #648c94;
+  --accent: #7daeab;
   --font-primary: 'Nunito', sans-serif;
   --font-heading: 'Montserrat', sans-serif;
 }
@@ -19,7 +18,7 @@ body {
 }
 
 body.dark-mode {
-  background: var(--dark-bg);
+  background: #1c1c1c;
   color: var(--dark-text);
 }
 
@@ -27,14 +26,14 @@ body.dark-mode {
 header {
   background: var(--primary);
   color: white;
-  padding: 20px 0;
+  padding:25px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -43,30 +42,46 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.logo {
-  height: 120px;
+  flex-wrap: wrap;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 55px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  padding: 5px 10px;
+  padding: 8px 12px;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 nav a:hover,
 nav a.active {
   background: var(--accent);
+  color: white;
+}
+
+/* Dark mode navigation links */
+body.dark-mode nav a {
+  color: #ccc;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode nav a.active {
+  background: var(--accent);
+  color: white;
 }
 
 /* Section Layouts */
@@ -135,9 +150,7 @@ nav a.active {
   font-style: italic;
 }
 
-
 /* Contact Section Enhancements */
-
 .contact-info {
   margin-top: 20px;
   font-size: 1rem;
@@ -148,7 +161,6 @@ nav a.active {
   margin-right: 8px;
   color: var(--primary);
 }
-
 
 /* Map */
 .map-container {
@@ -180,131 +192,19 @@ nav a.active {
   transform: none;
 }
 
-/* Responsive */
+/* Responsive Navigation */
 @media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   nav ul {
     flex-direction: column;
     gap: 10px;
-  }
-}
-/* Center the content inside the section */
-#standards .container {
-  text-align: center;
-}
-
-/* Adjust icon-text alignment */
-.custom-standards {
-  display: inline-block;  /* allows the block to center inside the container */
-  text-align: left;       /* keeps the icon + text aligned neatly */
-  margin-top: 20px;
-}
-
-.custom-standards p {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px 0;
-  font-size: 1.1rem;
-  justify-content: start; /* align icon and text in one line */
-}
-
-.custom-standards i {
-  color: #264341;  /* pastel blue or any icon color */
-  font-size: 1.2rem;
-}
-/* Contact Section Headings */
-#contact h2,
-#contact h1 {
-  color:#1b2850;
-}
-body, html {
-  margin: 0;
-  padding: 0;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;   /* reduce top padding */
-  background-color: #5f8f94; /* example background */
-}
-
-.logo {
-  height: 100px;
-  margin: 0;
-  padding-right: 150px;
-  display: block;
-}
-.navbar {
-  margin-left: 0; /* Remove default margin */
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 800px; /* spacing between menu items */
-  margin: 0;
-  padding: 0;
-}
-/* General header layout */
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; /* allows wrapping on small screens */
-  padding: 10px 20px;
-}
-
-/* Logo adjustments */
-.logo {
-  height: 80px; /* reduce size slightly */
-  margin: 0;
-  padding: 0;
-  flex-shrink: 0; /* prevents shrinking */
-}
-
-/* Navigation adjustments */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px; /* reasonable gap for desktop */
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap; /* wrap nav links on small screens */
-}
-
-/* Nav links */
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-/* Hover and active states */
-nav a:hover,
-nav a.active {
-  background: var(--accent);
-}
-
-/* Responsive styles for mobile */
-@media (max-width: 768px) {
-  .header-content {
-    justify-content: center; /* center logo and nav */
-  }
-
-  .logo {
-    height: 60px; /* smaller logo on mobile */
-    margin-bottom: 10px; /* spacing below logo */
-  }
-
-  nav ul {
-    flex-direction: column; /* stack nav links vertically */
-    gap: 10px;
-    width: 100%;
     align-items: center;
+    width: 100%;
   }
 
   nav li {
@@ -318,3 +218,38 @@ nav a.active {
   }
 }
 
+/* Standards Icons Section */
+#standards .container {
+  text-align: center;
+}
+
+.custom-standards {
+  display: inline-block;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.custom-standards p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  justify-content: start;
+}
+
+.custom-standards i {
+  color: #264341;
+  font-size: 1.2rem;
+}
+
+/* Contact Section Headings */
+#contact h2,
+#contact h1 {
+  color: #1b2850;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
