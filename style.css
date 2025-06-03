@@ -253,3 +253,11 @@ body, html {
   margin: 0;
   padding: 0;
 }
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: row;  /* Stay horizontal */
+    flex-wrap: wrap;      /* Allow wrapping if needed */
+    justify-content: center; /* Center the links */
+    gap: 10px;
+  }
+}
