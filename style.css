@@ -1,10 +1,10 @@
 /* Fonts and Base Styling */
 :root {
-  --light-bg: #ddc4e9;
+  --light-bg: #e1d2d2;
   --light-text: #1b2850;
   --dark-text: #a339a3;
-  --primary: #648c94;
-  --accent: #7daeab;
+  --primary: #487a6b86;
+  --accent: #415ea1;
   --font-primary: 'Nunito', sans-serif;
   --font-heading: 'Montserrat', sans-serif;
 }
