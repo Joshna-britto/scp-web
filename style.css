@@ -1,16 +1,15 @@
 /* Fonts and Base Styling */
 :root {
-  --light-bg: #e1d2d2;
+ --light-bg: linear-gradient(to right, #9978e7, #b753d6);
   --light-text: #1b2850;
   --dark-text: #a339a3;
-  --primary: #487a6b86;
+  --primary: #3d121286;
   --accent: #415ea1;
   --font-primary: 'Nunito', sans-serif;
   --font-heading: 'Montserrat', sans-serif;
 }
 
 body {
-  margin: 0;
   font-family: var(--font-primary);
   background: var(--light-bg);
   color: var(--light-text);
@@ -264,4 +263,35 @@ body.dark-mode nav a.active {
 body, html {
   margin: 0;
   padding: 0;
+}
+.logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Updated Header Content Layout */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
 }
